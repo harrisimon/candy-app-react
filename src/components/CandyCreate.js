@@ -1,5 +1,6 @@
 import React, { useState } from 'react' 
 import { candyCreate } from '../api/candy'
+import { useParms, useNavigate} from 'react-router-dom'
 
 const CandyCreate = ({ user, msgAlert }) => {
 
@@ -7,19 +8,22 @@ const CandyCreate = ({ user, msgAlert }) => {
         name: '',
         flavor: ''
     }
-
-    const [candy, setPet] = useState(defaultCandy)
-
+    
+    const [created, setCreated] = useState(false)
+    const [candy, setCandy] = useState(defaultCandy)
+    const navigate = useNavigate()
+    
     const handleChange = (event) => {
         // to keep the values as users input info 
         // first spread the current pet
         // then comma and modify the key to the value you need
-        setPet({...candy, [event.target.name]: event.target.value})
+        setCandy({...candy, [event.target.name]: event.target.value})
     }
 
     const handleCreateCandy = () => {
         candyCreate(candy, user)
         .then(() => {
+            setCreated(true)
             msgAlert({
                 heading: 'Success',
                 message: 'Create Candy',
@@ -34,6 +38,7 @@ const CandyCreate = ({ user, msgAlert }) => {
             })
         })
     }
+    if(created) navigate('/candies')
 
     return (
 			<>
