@@ -20,12 +20,12 @@ const authenticatedOptions = (
 		</Nav.Item>
 		<Nav.Item>
 			<Link to='create' style={linkStyle}>
-				Create Candy
+				Create 🍫
 			</Link>
 		</Nav.Item>
 		<Nav.Item>
 			<Link to='candies' style={linkStyle}>
-				Show All Candy
+				Show All 🍬
 			</Link>
 		</Nav.Item>
 	</>

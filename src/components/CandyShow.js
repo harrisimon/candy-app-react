@@ -89,7 +89,11 @@ const CandyShow = ({ user, msgAlert }) => {
             <h3>Name: {candy.name}</h3>
             <p>Flavor: {candy.flavor}</p>
 
-            <button onClick={toggleShowUpdate}>Update</button>
+            <button onClick={toggleShowUpdate} style={
+                !isUpdateShown 
+                ?{display:  'visible'} :
+                {display:  'none'}
+            }>Update</button>
             {isUpdateShown && (
             <CandyUpdate candy={candy} handleChange={handleChange} handleUpdateCandy={handleUpdateCandy} />
             )}
