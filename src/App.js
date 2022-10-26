@@ -13,6 +13,8 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import CandyCreate from './components/CandyCreate'
+import CandyIndex from './components/CandyIndex'
+import CandyShow from './components/CandyShow'
 
 const App = () => {
 
@@ -70,12 +72,26 @@ const App = () => {
               </RequireAuth>}
           />
 		  <Route
-            path='/candies'
+            path='/create'
             element={
               <RequireAuth user={user}>
                 <CandyCreate msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
+		  <Route
+            path='/candies'
+            element={
+              <RequireAuth user={user}>
+                <CandyIndex msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+		  		<Route 
+		  	path='/candies/:id'
+			element={
+				<RequireAuth user={user}>
+				  <CandyShow msgAlert={msgAlert} user={user} />
+				</RequireAuth>}
+		  />
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert

@@ -13,3 +13,36 @@ export const candyCreate = (data, user) => {
 		},
 	})
 }
+
+export const candyIndex = ( user ) => {
+	return axios({
+		method: 'GET',
+		url: apiUrl + '/candies',
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}
+
+export const candyShow = (user, id) => {
+	return axios({
+		method: 'GET',
+		url: apiUrl + '/candies/' + id,
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		}
+	})
+}
+
+export const candyUpdate = (data, user, id) => {
+	return axios({
+		method: 'PATCH',
+		url: apiUrl + '/candies/' + id,
+		data: {
+			candy: data,
+		},
+        headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}
