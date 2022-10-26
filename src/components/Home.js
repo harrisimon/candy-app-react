@@ -1,11 +1,19 @@
-const Home = (props) => {
-	// const { msgAlert, user } = props
-	console.log('props in home', props)
+import React from 'react'
+import { Navigate } from 'react-router-dom'
 
+
+const Home = (props) => {
+	const { user } = props
+	if (user) {
+		return(
+			<Navigate to='/candies' />
+		)
+	}
 	return (
-		<>
-			<h2>Home Page</h2>
-		</>
+		<div className='container-md'>
+			<h2>🍬Candy Emporium🍬</h2>
+			<p>Sign in to view and add to all the candies 🍬</p>
+		</div>
 	)
 }
 
