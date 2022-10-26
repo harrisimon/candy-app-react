@@ -15,7 +15,7 @@ const CandyUpdate = ({ candy, handleChange, handleUpdateCandy }) => {
                         name='flavor'
                         onChange={handleChange}
                     />
-                    <button onClick={handleUpdatePet}>Update Candy</button>
+                    <button onClick={handleUpdateCandy} >Update Candy</button>
         
         </>
     )

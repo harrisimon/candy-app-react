@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate} from 'react-router-dom'
 import { candyShow, candyUpdate } from '../api/candy'
+import CandyUpdate from './CandyUpdate'
 
 
 
@@ -59,6 +60,11 @@ const CandyShow = ({ user, msgAlert }) => {
         <>
             <h3>Name: {candy.name}</h3>
             <p>Flavor: {candy.flavor}</p>
+
+            <button onClick={toggleShowUpdate}>Update</button>
+            {isUpdateShown && (
+            <CandyUpdate candy={candy} handleChange={handleChange} handleUpdateCandy={handleUpdateCandy} toggle={toggleShowUpdate}/>
+            )}
         </>
     )
 
