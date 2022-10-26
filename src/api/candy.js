@@ -46,3 +46,13 @@ export const candyUpdate = (data, user, id) => {
 		},
 	})
 }
+
+export const candyDelete = ( user, id) => {
+	return axios({
+		method: 'DELETE',
+		url: apiUrl + '/candies/' + id,
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}
