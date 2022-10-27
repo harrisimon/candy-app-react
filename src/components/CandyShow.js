@@ -35,12 +35,12 @@ const CandyShow = ({ user, msgAlert }) => {
 
     const toggleShowUpdate = () => {
         setIsUpdateShown(prevUpdateShown => !prevUpdateShown)
+        
     }
 
     const handleChange = (event) => {
         setCandy({...candy, [event.target.name]: event.target.value})
     }
-
 
 
     const handleUpdateCandy = () => {
@@ -88,11 +88,11 @@ const CandyShow = ({ user, msgAlert }) => {
         <>
             <h3>Name: {candy.name}</h3>
             <p>Flavor: {candy.flavor}</p>
-
-            <button onClick={toggleShowUpdate} style={
-                !isUpdateShown 
-                ?{display:  'visible'} :
-                {display:  'none'}
+            <p>Calories: {candy.calories}</p>
+            <button onClick={toggleShowUpdate} 
+            style={isUpdateShown === true
+                ? {display:  'none'} :
+                 {display:  'visible'} 
             }>Update</button>
             {isUpdateShown && (
             <CandyUpdate candy={candy} handleChange={handleChange} handleUpdateCandy={handleUpdateCandy} />
