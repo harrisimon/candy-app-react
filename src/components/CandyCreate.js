@@ -6,7 +6,8 @@ const CandyCreate = ({ user, msgAlert }) => {
 
     const defaultCandy = {
         name: '',
-        flavor: ''
+        flavor: '',
+        calories: ''
     }
     
     const [created, setCreated] = useState(false)
