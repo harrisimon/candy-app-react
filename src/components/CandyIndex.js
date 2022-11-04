@@ -34,9 +34,9 @@ const CandyIndex = ({ user, msgAlert }) => {
     })
 
     return (
-        <>
+        <div className='container-md'>
             <ul>{allCandiesJSX}</ul>
-        </>
+        </div>
     )
     
 

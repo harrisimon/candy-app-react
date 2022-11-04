@@ -17,3 +17,6 @@ code {
   justify-content: space-between;
   margin:5px;
 }
+.container-md {
+  margin: 10px;
+}

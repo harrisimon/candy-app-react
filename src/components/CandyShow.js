@@ -12,6 +12,7 @@ const CandyShow = ({ user, msgAlert }) => {
     const [candy, setCandy] = useState({})
     const [isUpdateShown, setIsUpdateShown] = useState(false)
     const [deleted, setDeleted] = useState(false)
+    const [isUpdated, setIsUpdated] = useState(false)
     
     //desctructuring id from params
     const { id } = useParams()
@@ -85,7 +86,7 @@ const CandyShow = ({ user, msgAlert }) => {
     if(deleted) navigate('/candies')
 
     return (
-        <>
+        <div className='container-md'>
             <h3>Name: {candy.name}</h3>
             <p>Flavor: {candy.flavor}</p>
             <p>Calories: {candy.calories}</p>
@@ -98,7 +99,7 @@ const CandyShow = ({ user, msgAlert }) => {
             <CandyUpdate candy={candy} handleChange={handleChange} handleUpdateCandy={handleUpdateCandy} />
             )}
             <CandyDelete handleCandyDelete={handleCandyDelete}/>
-        </>
+        </div>
     )
 
 
